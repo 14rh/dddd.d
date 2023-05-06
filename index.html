@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>عرض كلمة عشوائية</title>
+  <style>
+    body {
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    #random-word {
+      color: white;
+      font-size: 48px;
+      text-align: center;
+      margin-bottom: 20px;
+      border: 2px solid white;
+      padding: 20px;
+      position: relative;
+    }
+
+    #random-word::before {
+      content: "my girl";
+      font-size: 24px;
+      color: white;
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    #random-word button {
+      display: block;
+      background-color: #ffffff;
+      color: #000000;
+      font-size: 18px;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="random-word"></div>
+  <button onclick="displayRandomWord()">اظغط هنا</button>
+
+  <script>
+    function displayRandomWord() {
+      var words = ["نحبك ولائيي", "لؤلؤتي", "اكتر بنوته حبيتها فحياتي", "حبيبتي", ];
+      var randomIndex = Math.floor(Math.random() * words.length);
+      var randomWord = words[randomIndex];
+      document.getElementById("random-word").innerHTML = randomWord;
+    }
+  </script>
+</body>
+</html>
